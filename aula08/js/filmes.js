@@ -18,6 +18,7 @@ fetch("https://api.themoviedb.org/3/movie/popular?language=pt-br&api_key=e8ee1b7
 
       let div_fm= document.createElement("div")
         //adicionar um atributo do tipo class
+        //novo comentario
         // para formatar
         div_fm.setAttribute("class","filme") 
         // criar um elemento 
