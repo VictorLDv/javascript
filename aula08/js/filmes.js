@@ -1,3 +1,16 @@
+function infofilme(dados){
+let saida=""
+saida+=`<h2>${dados.title}</h2>`
+saida+=`<p>${dados.overview}</p>`
+saida+=`<p>lancamentos:</strong> ${dados.release_date}</p>`
+saida+=`<p>Média votos:</strong> ${dados.vote_average* 10}</p>`
+
+  document.getElementById("info").style.display = "flex"
+  document.getElementById("poster").innerHTML =`<img src=https://image.tmdb.org/t/p/w500${dados.poster_path}>`
+  document.getElementById("detalhe").innerHTML = saida
+}
+
+
 function carregarFilmes(){
 
 let lista=document.getElementById("lista")
@@ -11,7 +24,7 @@ fetch("https://api.themoviedb.org/3/movie/popular?language=pt-br&api_key=e8ee1b7
     .then((resposta)=>resposta.json())
     .then((dados)=> {
     console.log(dados.results)
-    dados.results.map((f)=>{
+    dados.results.map((f, i) => {
         // vamos criar um elemento do tipo
         //  DIV para cada filme mapeado
 
@@ -21,6 +34,10 @@ fetch("https://api.themoviedb.org/3/movie/popular?language=pt-br&api_key=e8ee1b7
         //novo comentario
         // para formatar
         div_fm.setAttribute("class","filme") 
+
+        div_fm.onclick = ()=>{
+          infofilme(f);
+        }
         // criar um elemento 
         // do tipo img para capa do filme
 
@@ -32,7 +49,7 @@ fetch("https://api.themoviedb.org/3/movie/popular?language=pt-br&api_key=e8ee1b7
 
         let p_votos = document.createElement("P")
         p_votos.setAttribute("class","votos")
-        p_votos.innerHTML=f.vote_average
+        p_votos.innerHTML= Math.round(f.vote_average *10) + "%"
 
         let h2_titulo = document.createElement("h2")
         h2_titulo.innerHTML =f.title
@@ -53,5 +70,15 @@ fetch("https://api.themoviedb.org/3/movie/popular?language=pt-br&api_key=e8ee1b7
         lista.appendChild(div_fm)
        })
     })
-    .catch((e)=>console.error(e))
+    .catch(function (e) { console.error(e) })
+}
+
+//quando clicar no x(fechar) da
+//tela de informações do filme 
+//o painel com as informações deve fechar
+//vamos usar o comando
+//de css display none.
+
+document.getElementById("fechar").onclick=() => {
+  document.getElementById("info").style.display = "none"
 }

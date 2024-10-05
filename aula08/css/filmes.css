@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "jostai";
+    src: url(./fonts/Jost-Italic-VariableFont_wght.ttf);
+
+    font-family: "afaca";
+    src: url(./fonts/AfacadFlux-Thin.ttf);
+}
+
+
+
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+
+}
+
+
+div#lista {
+    display: flex;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+    border: 1px solid red;
+}
+
+.filme {
+    width: 17.6%;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid silver;
+    box-shadow: 0 0 10px silver;
+    transition: ease 1s;
+    cursor: pointer;
+    background-color: #fff;
+
+}
+
+.filme img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.filme:hover {
+    transform: scale(1.2);
+    z-index: 10000;
+
+}
+
+.votos{
+    background-color: rgb(44, 43, 43);
+    border: 1px solid rgb(94, 231, 94);
+    color: black (93, 173, 243);
+    font-family: Arial ;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8pt;
+    position: relative;
+    left: 10px;
+    top: -25px;
+}
+
+h2{
+    font-family: "jostai";
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.lancamento{
+    font-family: "afaca";
+    font-size: 11pt;
+    font-weight: bold;
+    margin: 10px;
+}
+#info{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0 , 0 , 0.7);
+    position:fixed;
+    top:0px;
+    left:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display:none
+}
+
+#info-filme{
+    width: 800px;
+    height: 600px;
+    background-color:#ec2424;
+    display: flex;
+}
+
+#fechar{
+    text-decoration: none;
+    color: black;
+    font-size: 20pt;
+    font-weight: bold;
+    position: relative;
+    left: 760px;
+    top: 0px;
+    width: 40px;
+    height: 40px;
+}
+#poster , 
+#detalhe{
+    flex: 1;
+}
+
+#poster img{
+    width: 100%;
+    height: 800;
+    left: 40px;
+}
+#detalhe{
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
