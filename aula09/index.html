@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
       <h1>Gerenciar clientes</h1>
       <hr>
-     <a href="#" class= "btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+     <a href="#" id="btncadastrar" class= "btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
         cadastrar clientes</a>
      <hr>
         <h4>Clientes Cadastrados</h4>
-     <div id="lista"></div>
+     <div id="lista" class="container row"></div>
 
      
     </div>
@@ -23,7 +23,7 @@
 <!-- inicio do modal-->
 
 
-<div class="modal fade modal-dialog modal-dialog-centered" tabindex="-1"  id="exampleModal">
+<div class="modal fade" tabindex="-1"  id="exampleModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -46,6 +46,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fechar</button>
           <button type="button" class="btn btn-primary" id="Salvar">Salvar</button>
+          <button type="button" class="btn btn-success" id="btnatualizar">atualizar</button>
         </div>
       </div>
     </div>

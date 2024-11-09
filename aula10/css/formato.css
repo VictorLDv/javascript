@@ -1,0 +1,24 @@
+#imagem{
+background-image: url("https://i.pinimg.com/236x/43/13/98/4313984074937e0d3551c4a6b5d4c874.jpg");
+width: 300px;
+height: 350px;
+position: relative;
+}
+#sombra{
+    position: fixed;
+    background-color: black;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    transition: ease 2s;
+}
+
+.quadro{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
